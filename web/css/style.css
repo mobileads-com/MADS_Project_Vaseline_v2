@@ -1,0 +1,477 @@
+@font-face {
+    font-family: "Helvetica LT Std Bold";
+    src: url(fonts/HelveticaLTStd-Bold_2.otf);
+}
+
+@font-face {
+    font-family: "Helvetica LT Std Roman";
+    src: url(fonts/HelveticaLTStd-Roman_2.otf);
+}
+
+body {
+    width: 320px;
+    height: 480px;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica LT Std Roman";
+    overflow: hidden;
+}
+
+#rma-widget {
+    width: 320px;
+    height: 480px;
+    background: url("../img/bg.png") no-repeat;
+    overflow: hidden;
+}
+
+#first-screen {
+    position: relative;
+}
+
+#footer, #content, #video {
+    animation-name: showVideo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: showVideo;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+
+#cursor {
+    z-index: 1;
+}
+
+#footer {
+    padding: 10px 0 0 10px;
+    width: 310px;
+    height: 43px;
+    background: url("../img/footer-bg.png") no-repeat;
+    position: absolute;
+    top: 428px;
+    left: 0;
+    opacity: 0;
+    color: #ffffff;
+    font-size: 8pt;
+}
+
+#btn {
+    clear: both;
+    display: block;
+    width: 148px;
+    height: 32px;
+    padding-top: 3px;
+    background: url("../img/btn-bg.png") no-repeat;
+    text-align: center;
+    line-height: 32px;
+    color: #ffffff;
+    font-size: 11pt;
+    text-decoration: none;
+}
+
+#content {
+    position: absolute;
+    top: 220px;
+    left: 15px;
+    opacity: 0;
+}
+#content .img {
+    float: left;
+    margin-right: 10px;
+}
+#content .message {
+    width: 180px;
+    float: left;
+    font-size: 12pt;
+    margin: 25px 0 20px 0;
+}
+
+#video {
+    width: 215px;
+    height: 130px;
+    border: 1px solid #000000;
+    position: absolute;
+    top: 70px;
+    left: 15px;
+    opacity: 0;
+}
+
+#hand {
+    width: 42px;
+    height: 31px;
+    background: url("../img/hand.png") no-repeat;
+    position: relative;
+    top: 210px;
+    left: 180px;
+    opacity: 0.3;
+    animation-name: animateHand;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 4;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: animateHand;
+    -webkit-animation-duration: 1.2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 4;
+    -webkit-animation-fill-mode: forwards;
+}
+#first-screen .title {
+    height: 61px;
+    padding-top: 90px;
+}
+#first-screen .title .vaseline-bottle {
+    width: 28px;
+    height: 61px;
+    background: url("../img/vaseline-bottle.png") no-repeat;
+    margin: 0 10px;
+    float: left;
+}
+#first-screen .title .text {
+    padding: 0 30px;
+    color: #ffffff;
+    font-size: 11pt;
+    line-height: 14pt;
+    text-align: center;
+}
+#first-screen .title .msg {
+    padding: 10px 10px 0 0;
+    color: #ffffff;
+    font-size: 9.4pt;
+    line-height: 14pt;
+}
+#first-screen .model-body.animate-to-left img {
+    width: 185px;
+    height: 341px;
+    animation-name: zoom;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+#first-screen .model-body.animate-to-left {
+    top: 20px;
+    animation-name: animateBodyToLeft;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: animateBodyToLeft;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+#first-screen .model-body {
+    position: relative;
+    top: 0;
+    left: 65px;
+}
+#first-screen .model-body .body {
+    width: 191px;
+    height: 185px;
+    position: absolute;
+    top: 167px;
+}
+#first-screen .model-body .body.dark {
+    opacity: 0;
+    animation-name: animateSkinToDark;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: animateSkinToDark;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+#first-screen .model-body .head.sad {
+    background: url("../img/sad-face.png") no-repeat;
+    opacity: 1;
+}
+#first-screen .model-body .head.happy {
+    background: url("../img/happy-face.png") no-repeat;
+    opacity: 0;
+}
+#first-screen .model-body .head {
+    width: 108px;
+    height: 170px;
+    position: absolute;
+    top: 20px;
+    left: 42px;
+    z-index: 1;
+}
+#first-screen .sun {
+    width: 73px;
+    height: 72px;
+    background: url("../img/sun.png") no-repeat;
+    position: relative;
+    top: 150px;
+    left: 25px;
+    animation-name: animateSun;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: animateSun;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    opacity: 0.3;
+}
+#first-screen .skin-wheel.invisible {
+    position: absolute;
+    top: 320px;
+    left: 205px;
+    z-index: 0;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-name: animateIndicatorToDark;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-name: animateIndicatorToDark;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-fill-mode: forwards;
+}
+#first-screen .skin-wheel {
+    width: 90px;
+    height: 90px;
+    background: url("../img/skin-wheel.png") no-repeat;
+    position: absolute;
+    top: 320px;
+    left: 205px;
+    z-index: 1;
+}
+#first-screen .skin-wheel .indicator {
+    width: 12px;
+    height: 15px;
+    background: url("../img/indicatior.png") no-repeat;
+    position: absolute;
+    top: 88px;
+    left: 60px;
+}
+#first-screen .skin-wheel.animate-back {
+    position: absolute;
+    top: 320px;
+    left: 205px;
+    z-index: 0;
+    transform:rotate(90deg);
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-name: animateIndicatorToLight;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-name: animateIndicatorToLight;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-fill-mode: forwards;
+}
+#first-screen .skin-wheel.animate-back .indicator-on-dark {
+    width: 12px;
+    height: 15px;
+    background: url("../img/indicatior.png") no-repeat;
+    position: absolute;
+    top: 88px;
+    left: 60px;
+}
+
+
+@-webkit-keyframes animateSun {
+    from {
+        opacity: 0.3;
+        top: 150px;
+    }
+    to {
+        opacity: 1;
+        top: 10px;
+    }
+}
+@keyframes animateSun {
+    from {
+        opacity: 0.3;
+        top: 150px;
+    }
+    to {
+        opacity: 1;
+        top: 10px;
+    }
+}
+
+@-webkit-keyframes animateSkinToDark {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes animateSkinToDark {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes showVideo {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes showVideo {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animateIndicatorToDark {
+    from {
+        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        z-index: 0;
+    }
+    to {
+        transform:rotate(90deg);
+        -webkit-transform:rotate(90deg);
+        z-index: 0;
+    }
+}
+@keyframes animateIndicatorToDark {
+    from {
+        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        z-index: 0;
+    }
+    to {
+        transform:rotate(90deg);
+        -webkit-transform:rotate(90deg);
+        z-index: 0;
+    }
+}
+
+
+@keyframes animateIndicatorToLight {
+    from {
+        transform:rotate(90deg);
+        -webkit-transform:rotate(90deg);
+        z-index: 0;
+    }
+    to {
+        transform:rotate(-185deg);
+        -webkit-transform:rotate(-185deg);
+        z-index: 0;
+    }
+}
+@-webkit-keyframes animateIndicatorToLight {
+    from {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        z-index: 0;
+    }
+    to {
+        transform: rotate(-185deg);
+        -webkit-transform: rotate(-185deg);
+        z-index: 0;
+    }
+}
+
+
+
+@keyframes animateHand {
+    from {
+        opacity: 0.3;
+        top: 210px;
+        left: 180px;
+    }
+    to {
+        opacity: 1;
+        top: 170px;
+        left: 155px;
+    }
+}
+@-webkit-keyframes animateHand {
+    from {
+        opacity: 0.3;
+        top: 210px;
+        left: 180px;
+    }
+    to {
+        opacity: 1;
+        top: 170px;
+        left: 155px;
+    }
+}
+
+@keyframes zoom {
+    from {
+        width: 185px;
+        height: 341px;
+    }
+    to {
+        width: 250px;
+        height: 462px;
+    }
+}
+@-webkit-keyframes zoom {
+    from {
+        width: 185px;
+        height: 341px;
+    }
+    to {
+        width: 250px;
+        height: 462px;
+    }
+}
+
+
+@keyframes animateBodyToLeft {
+    from {
+        top: 20px;
+        left: 65px;
+    }
+    to {
+        top: -70px;
+        left: 180px;
+    }
+}
+
+
+
+
+
+
