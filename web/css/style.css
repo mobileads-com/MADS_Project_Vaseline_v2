@@ -24,6 +24,14 @@ body {
     overflow: hidden;
 }
 
+#clickable {
+    width: 320px;
+    height: 240px;
+    position: absolute;
+    top: 240px;
+    left: 0;
+}
+
 #first-screen {
     position: relative;
 }
@@ -48,9 +56,9 @@ body {
 }
 
 #footer {
-    padding: 10px 0 0 10px;
+    padding: 0 0 0 10px;
     width: 310px;
-    height: 43px;
+    height: 53px;
     background: url("../img/footer-bg.png") no-repeat;
     position: absolute;
     top: 428px;
@@ -64,9 +72,10 @@ body {
     clear: both;
     display: block;
     width: 148px;
-    height: 32px;
+    height: 29px;
     padding-top: 3px;
-    background: url("../img/btn-bg.png") no-repeat;
+    background: #92d1f3;
+    border-radius: 5px;
     text-align: center;
     line-height: 32px;
     color: #ffffff;
@@ -76,24 +85,25 @@ body {
 
 #content {
     position: absolute;
-    top: 220px;
+    top: 260px;
     left: 15px;
     opacity: 0;
 }
 #content .img {
     float: left;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 #content .message {
     width: 180px;
     float: left;
-    font-size: 12pt;
+    font-size: 10pt;
     margin: 25px 0 20px 0;
+    color: #ffffff;
 }
 
 #video {
-    width: 215px;
-    height: 130px;
+    width: 290px;
+    height: 170px;
     border: 1px solid #000000;
     position: absolute;
     top: 70px;
@@ -136,14 +146,14 @@ body {
 #first-screen .title .text {
     padding: 0 30px;
     color: #ffffff;
-    font-size: 11pt;
+    font-size: 10pt;
     line-height: 14pt;
     text-align: center;
 }
 #first-screen .title .msg {
     padding: 10px 10px 0 0;
     color: #ffffff;
-    font-size: 9.4pt;
+    font-size: 9pt;
     line-height: 14pt;
 }
 #first-screen .model-body.animate-to-left img {
@@ -227,13 +237,13 @@ body {
     top: 150px;
     left: 25px;
     animation-name: animateSun;
-    animation-duration: 3s;
+    animation-duration: 4.5s;
     animation-timing-function: linear;
     animation-delay: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     -webkit-animation-name: animateSun;
-    -webkit-animation-duration: 3s;
+    -webkit-animation-duration: 4.5s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-delay: 1s;
     -webkit-animation-iteration-count: 1;
@@ -249,13 +259,13 @@ body {
     animation-timing-function: linear;
     animation-delay: 1s;
     animation-name: animateIndicatorToDark;
-    animation-duration: 3s;
+    animation-duration: 4.5s;
     animation-fill-mode: forwards;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: linear;
     -webkit-animation-delay: 1s;
     -webkit-animation-name: animateIndicatorToDark;
-    -webkit-animation-duration: 3s;
+    -webkit-animation-duration: 4.5s;
     -webkit-animation-fill-mode: forwards;
 }
 #first-screen .skin-wheel {
@@ -270,7 +280,7 @@ body {
 #first-screen .skin-wheel .indicator {
     width: 12px;
     height: 15px;
-    background: url("../img/indicatior.png") no-repeat;
+    background: url("../img/indicator.png") no-repeat;
     position: absolute;
     top: 88px;
     left: 60px;
@@ -297,7 +307,7 @@ body {
 #first-screen .skin-wheel.animate-back .indicator-on-dark {
     width: 12px;
     height: 15px;
-    background: url("../img/indicatior.png") no-repeat;
+    background: url("../img/indicator.png") no-repeat;
     position: absolute;
     top: 88px;
     left: 60px;
@@ -460,6 +470,16 @@ body {
 
 
 @keyframes animateBodyToLeft {
+    from {
+        top: 20px;
+        left: 65px;
+    }
+    to {
+        top: -70px;
+        left: 180px;
+    }
+}
+@-webkit-keyframes animateBodyToLeft {
     from {
         top: 20px;
         left: 65px;
