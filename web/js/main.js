@@ -288,6 +288,18 @@ VaselineAd.prototype.wipe = function () {
                     left: (x - 50) + 'px'
                 });
             }
+            
+            function moveCursor_m (e) {
+                var x = e.originalEvent.touches[0].pageX;
+                var y = e.originalEvent.touches[0].pageY;
+
+                $('#hand').remove();
+                $('#cursor').css({
+                    position: 'absolute',
+                    top: (y - 80) + 'px',
+                    left: (x - 50) + 'px'
+                });
+            }
 
             function cancelCursor () {
                 $('#cursor').remove();
@@ -300,8 +312,8 @@ VaselineAd.prototype.wipe = function () {
                     canvas.on('click', moveCursor);
                     canvas.on('mousedown', moveCursor);
                     canvas.on('mousemove', moveCursor);
-                    canvas.on('touchstart', moveCursor);
-                    canvas.on('touchmove', moveCursor);
+                    canvas.on('touchstart', moveCursor_m);
+                    canvas.on('touchmove', moveCursor_m);
                     canvas.on('touchend', cancelCursor);
                     canvas.on('mouseup', cancelCursor);
                     canvas.on('mousemoveend', cancelCursor);
