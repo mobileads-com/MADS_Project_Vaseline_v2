@@ -56,7 +56,7 @@ mads.prototype.linkOpener = function (url) {
 
 /* tracker */
 mads.prototype.tracker = function (tt, type, name) {
-
+console.log(type);
     /* 
      * name is used to make sure that particular tracker is tracked for only once
      * there might have the same type in different location, so it will need the name to differentiate them
@@ -316,6 +316,8 @@ VaselineAd.prototype.wipe = function () {
     });
 
     function wipeCompleted () {
+        
+        sdk.tracker('E', 'vv_wipe');
         var canvas = $('canvas');
         $('#cursor').remove();
 
@@ -363,7 +365,8 @@ VaselineAd.prototype.wipe = function () {
                 'container' : 'video',
                 'width' : '290',
                 'height' : '170',
-                'videoId' : '2KGpqyaL_OI'
+                'videoId' : '2KGpqyaL_OI',
+                'tracker' : sdk
             });
 
             var content = $('<div id="content"></div>');
@@ -379,6 +382,7 @@ VaselineAd.prototype.wipe = function () {
             $('#first-screen').append(clickableArea);
 
             clickableArea.on('click', function () {
+                sdk.tracker('CTR', 'vv_site');
                 sdk.linkOpener('http://www.vaseline.com.my/');
             });
 
