@@ -56,6 +56,7 @@ body {
 }
 
 #footer {
+    text-align: left;
     padding: 0 0 0 10px;
     width: 310px;
     height: 53px;
@@ -84,6 +85,8 @@ body {
 }
 
 #content {
+    text-align: left;
+    background: transparent;
     position: absolute;
     top: 260px;
     left: 15px;
@@ -133,6 +136,7 @@ body {
     -webkit-animation-fill-mode: forwards;
 }
 #first-screen .title {
+    text-align: left;
     height: 61px;
     padding-top: 90px;
 }

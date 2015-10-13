@@ -358,7 +358,7 @@ VaselineAd.prototype.wipe = function () {
         setTimeout(function () {
             $('#first-screen .title').html('');
             $('#first-screen .sun').fadeOut(1000);
-            $('#first-screen .model-body').addClass('animate-to-left').html('<img src="img/model.png" />');
+            $('#first-screen .model-body').addClass('animate-to-left').html('<img src="'+sdk.path+'img/model.png" />');
 
             $('#first-screen').append('<div id="video"></div>');
             video = new ytComponent({
