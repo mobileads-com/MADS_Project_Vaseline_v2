@@ -138,10 +138,10 @@ ytComponent.prototype.videoPlayLength = function () {
 
     if (perc == 25 && this.playTimeDone.indexOf(perc) == -1) {
         /* tracking */
-        this.tracker.tracker('E', 'play_75');
+        this.tracker.tracker('E', 'play_25');
     } else if (perc == 50 && this.playTimeDone.indexOf(perc) == -1) {
         /* tracking */
-        this.tracker.tracker('E', 'play_75');
+        this.tracker.tracker('E', 'play_50');
     } else if (perc == 75 && this.playTimeDone.indexOf(perc) == -1) {
         /* tracking */
         this.tracker.tracker('E', 'play_75');
