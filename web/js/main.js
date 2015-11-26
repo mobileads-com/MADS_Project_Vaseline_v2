@@ -62,32 +62,28 @@
      */
      name = name || type;
      if ( typeof this.custTracker != 'undefined' && this.custTracker != '' && this.tracked.indexOf(name) == -1 ) {
-     	if( type == 'vv_wipe'){
-     		var img = document.createElement('img');
-     		var src = this.custTracker[2];
-     		img.src = src + '&' + this.id;
-     		img.style.display = 'none';
-     		this.bodyTag.appendChild(img);
-     		this.tracked.push(name);
-     	}else{
-     		for (var i = 0; i < this.custTracker.length; i++) {
-     			if(this.custTracker[i] != '__MW_CLICK_URL__'){
-     				var img = document.createElement('img');
-	     			/* Insert Macro */
-	     			var src = this.custTracker[i].replace('{{type}}', type);
-	     			src = src.replace('{{tt}}', tt);
-	     			/* */
-	     			img.src = src + '&' + this.id;
 
-	     			img.style.display = 'none';
-	     			this.bodyTag.appendChild(img);
+         for (var i = 0; i < 3; i++) {
+                
+            if ((i == 1 && type == 'vv_wipe') || (i == 2 && type != 'vv_wipe')){
+                continue;
+            }
+            
+            var img = document.createElement('img');
 
-	     			this.tracked.push(name);
-     			}
-     		}
-     	}
+            /* Insert Macro */
+            var src = this.custTracker[i].replace('{{type}}', type);
+            src = src.replace('{{tt}}', tt);
+            /* */
+            img.src = src + '&' + this.id;
+
+            img.style.display = 'none';
+            this.bodyTag.appendChild(img);
+
+            this.tracked.push(name);
+        }
      }
-   };
+};
 
    /* Load JS File */
    mads.prototype.loadJs = function (js, callback) {
